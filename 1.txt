@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 1
+=======
+2
+>>>>>>> parent of fb13590 (Update 1.txt)
