@@ -54,19 +54,19 @@ int main(int argc, char *args[]) {
 			if (listen_fd == events[i].data.fd) {  // listen的socket有事件
 				struct sockaddr_in client_addr;
 				socklen_t len = sizeof(client_addr);
-                int conn_fd = accept(listen_fd, (struct sockaddr *)&client_addr, &len);
-                if (conn_fd == -1) {
-                    perror("accept error.");
-                    continue;
-                } else {
+				int conn_fd = accept(listen_fd, (struct sockaddr *)&client_addr, &len);
+				if (conn_fd == -1) {
+					perror("accept error.");
+					continue;
+				} else {
 					printf("client [%d] is connected !\n", conn_fd);
 					struct epoll_event event_tmp;
 					event_tmp.data.fd = conn_fd;
 					event_tmp.events = EPOLLIN | EPOLLET;
 					epoll_ctl(epfd, EPOLL_CTL_ADD, conn_fd, &event_tmp);
-                }
-            } else {	// 已经连接的客户端socket有事件
-                int client_fd = events[i].data.fd;
+				}
+			} else {	// 已经连接的客户端socket有事件
+		                int client_fd = events[i].data.fd;
 				char buffer[1024];
 				memset(buffer, 0, sizeof(buffer));
 				int res = recv(client_fd, buffer, sizeof(buffer), 0); 
@@ -76,8 +76,8 @@ int main(int argc, char *args[]) {
 				} else {
 					printf("recv data from client [%d] is %s\n", client_fd, buffer);
 					send(client_fd, buffer, sizeof(buffer), 0);
-                }
-            }
+		                }
+	            	}
 		}
 	}
 
