@@ -1,0 +1,11 @@
+1、VMware虚拟机下CentOS 7安装教程
+https://blog.csdn.net/hjp2020/article/details/106156642
+
+2、安装VMware Tools
+https://blog.csdn.net/qq_40259641/article/details/79022844
+
+3、VMware虚拟机与主机之间传输文件
+https://blog.csdn.net/sazass/article/details/113376049
+
+4、VMWare虚拟机CentOS7网络设置：NAT模式
+https://blog.csdn.net/sulia1234567890/article/details/123431357
